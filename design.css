@@ -1,0 +1,210 @@
+/* Palet Warna */
+:root {
+    --color-primary: #A9BC9C; /* Sage Hijau Muda */
+    --color-secondary: #6B8E23; /* Olive Hijau Tua */
+    --color-background: #F5F5DC; /* Krem Lembut */
+    --color-text: #36454F; /* Abu-abu Arang */
+    --color-light-accent: #EBF4E7; /* Hijau Sangat Pucat */
+}
+
+/* GLOBAL RESET & FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER & NAVIGASI */
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--color-text); /* Gunakan teks gelap agar kontras dengan header hijau */
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: var(--color-light-accent);
+    text-align: center;
+    padding: 80px 0;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #55781a; /* Sedikit lebih gelap */
+}
+
+/* ETALASE PRODUK */
+.etalase {
+    padding: 40px 0;
+}
+
+.etalase h3 {
+    text-align: center;
+    font-size: 2em;
+    color: var(--color-secondary);
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    /* Membuat grid 5 kolom */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px;
+}
+
+.product-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px; /* Tinggi gambar seragam */
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 15px 10px;
+}
+
+.product-info h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.material-tag {
+    /* Gaya untuk bahan daur ulang yang muncul di bawah */
+    display: block;
+    font-size: 0.85em;
+    color: white;
+    background-color: var(--color-primary);
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 10px;
+    /* Anda bisa sembunyikan ini secara default dan tampilkan saat hover jika mau */
+}
+
+/* ABOUT SECTION */
+.about {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-text);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Media Queries untuk Responsif (Penting untuk siap jual) */
+@media (max-width: 992px) {
+    .product-grid {
+        /* Di tablet, ubah menjadi 3 kolom */
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        /* Di ponsel, ubah menjadi 2 kolom */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    header .container {
+        flex-direction: column;
+    }
+    nav a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+}
